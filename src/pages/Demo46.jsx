@@ -4,7 +4,6 @@ import { InlineMath, BlockMath } from 'react-katex';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip } from 'chart.js';
 import { normCDF } from '../utils/math';
-import { showFlare } from '../utils/flare';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
@@ -46,7 +45,6 @@ export default function Demo46() {
   const btnRef = useRef(null);
 
   function runClt() {
-    showFlare('POW', btnRef.current, { size: 'big', key: 'clt' });
     const means = [];
     for (let i = 0; i < numSamples; i++) means.push(sampleFrom(popShape, nClt));
     const avg = means.reduce((a, b) => a + b, 0) / numSamples;
@@ -72,7 +70,7 @@ export default function Demo46() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.6: Sampling Distributions</h1>
 
       <div className="concept-block">

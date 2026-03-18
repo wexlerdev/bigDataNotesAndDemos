@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { InlineMath, BlockMath } from 'react-katex';
 import { linReg } from '../utils/math';
-import { showFlare } from '../utils/flare';
 
 function generateData(noise, seed) {
   const rng = seedRng(seed);
@@ -36,7 +35,6 @@ export default function Demo51() {
 
   const regenerate = useCallback(() => {
     setSeed(s => s + 7);
-    if (btnRef.current) showFlare('POP', btnRef.current, { size: 'subtle', key: 'regen' });
   }, []);
 
   useEffect(() => {
@@ -97,8 +95,8 @@ export default function Demo51() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
-      <h1>5.1: Introduction to Regression</h1>
+      <Link to="/demos" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
+      <h1>5.1.1: Introduction to Regression</h1>
 
       <div className="concept-block">
         <h2>What You'll Learn</h2>

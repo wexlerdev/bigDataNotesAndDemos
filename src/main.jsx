@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import App from './App';
 import './styles/style.css';
-import './styles/flare.css';
 import 'katex/dist/katex.min.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

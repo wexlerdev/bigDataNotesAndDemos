@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { InlineMath, BlockMath } from 'react-katex';
 import { parseNum } from '../utils/math';
-import { showFlare } from '../utils/flare';
 
 export default function Demo53() {
   // Coefficient Interpreter
@@ -50,8 +49,8 @@ export default function Demo53() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
-      <h1>5.3: Interpreting Coefficients &amp; Residuals</h1>
+      <Link to="/demos" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
+      <h1>5.1.3: Interpreting Coefficients &amp; Residuals</h1>
 
       <div className="concept-block">
         <h2>What You'll Learn</h2>
@@ -61,7 +60,7 @@ export default function Demo53() {
           <li>Understand what residual patterns tell you about model quality</li>
         </ul>
         <p><strong>When to use:</strong> You have a fitted regression and need to communicate what the numbers mean.</p>
-        <p><strong>Prerequisites:</strong> <Link to="/5.2">5.2</Link> — OLS equation.</p>
+        <p><strong>Prerequisites:</strong> <Link to="/5.1.2">5.1.2</Link> — OLS equation.</p>
       </div>
 
       <div className="content-section">

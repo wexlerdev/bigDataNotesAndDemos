@@ -2,7 +2,6 @@ import { useState, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { InlineMath, BlockMath } from 'react-katex';
 import { tQuantile } from '../utils/math';
-import { showFlare } from '../utils/flare';
 
 const zVals = { 90: 1.645, 95: 1.96, 99: 2.576 };
 
@@ -29,9 +28,6 @@ export default function Demo47() {
     const z = zVals[confW] || 1.96;
     const moe = z * sigW / Math.sqrt(nW);
     const w = 2 * moe;
-    if (nW > prevRef.current.n && w < prevRef.current.w) {
-      showFlare('CRACK', null, { size: 'small', key: 'ci' });
-    }
     prevRef.current = { n: nW, w };
     return w;
   }, [nW, sigW, confW]);
@@ -57,7 +53,7 @@ export default function Demo47() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.7: Confidence Intervals</h1>
 
       <div className="concept-block">

@@ -69,8 +69,8 @@ export default function Demo54() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
-      <h1>5.4: Goodness of Fit</h1>
+      <Link to="/demos" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
+      <h1>5.2: Goodness-of-Fit Measures</h1>
 
       <div className="concept-block">
         <h2>What You'll Learn</h2>
@@ -80,7 +80,7 @@ export default function Demo54() {
           <li>Interpret the standard error of the estimate <InlineMath math="S_e" /></li>
         </ul>
         <p><strong>When to use:</strong> You have a fitted model and want to know how well it fits the data.</p>
-        <p><strong>Prerequisites:</strong> <Link to="/5.2">5.2</Link> — OLS and residuals.</p>
+        <p><strong>Prerequisites:</strong> <Link to="/5.1.2">5.1.2</Link> — OLS and residuals.</p>
       </div>
 
       <div className="content-section">

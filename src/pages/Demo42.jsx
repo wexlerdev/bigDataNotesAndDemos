@@ -1,7 +1,6 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { InlineMath, BlockMath } from 'react-katex';
-import { showFlare } from '../utils/flare';
 
 export default function Demo42() {
   // Lie detector
@@ -34,14 +33,10 @@ export default function Demo42() {
     return { pNotD, jointD, jointNotD, pPos, postD, postNotD };
   }, [pDisease, pPosD, pPosNotD]);
 
-  const tableRef = useRef(null);
-  function triggerFlare() {
-    if (tableRef.current) showFlare('KAPOW', tableRef.current, { size: 'subtle', key: 'bayes' });
-  }
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.2: Total Probability and Bayes' Theorem</h1>
 
       <div className="concept-block">
@@ -81,20 +76,20 @@ export default function Demo42() {
       </div>
 
       <h2>Interactive Demo: Lie Detector</h2>
-      <div className="demo-box" ref={tableRef}>
+      <div className="demo-box">
         <p>Adjust the parameters and see the solution table update.</p>
         <div className="input-row">
           <div className="input-group">
             <label><InlineMath math="P(T)" /> — prior truth</label>
-            <input type="number" value={pT} min="0" max="1" step="0.01" onChange={e => { setPT(parseFloat(e.target.value) || 0); triggerFlare(); }} />
+            <input type="number" value={pT} min="0" max="1" step="0.01" onChange={e => setPT(parseFloat(e.target.value) || 0)} />
           </div>
           <div className="input-group">
             <label><InlineMath math="P(D|T)" /> — false positive</label>
-            <input type="number" value={pDgT} min="0" max="1" step="0.001" onChange={e => { setPDgT(parseFloat(e.target.value) || 0); triggerFlare(); }} />
+            <input type="number" value={pDgT} min="0" max="1" step="0.001" onChange={e => setPDgT(parseFloat(e.target.value) || 0)} />
           </div>
           <div className="input-group">
             <label><InlineMath math="P(D|T^c)" /> — true positive</label>
-            <input type="number" value={pDgTc} min="0" max="1" step="0.01" onChange={e => { setPDgTc(parseFloat(e.target.value) || 0); triggerFlare(); }} />
+            <input type="number" value={pDgTc} min="0" max="1" step="0.01" onChange={e => setPDgTc(parseFloat(e.target.value) || 0)} />
           </div>
         </div>
         <table className="demo-table">
@@ -143,15 +138,15 @@ export default function Demo42() {
         <div className="input-row">
           <div className="input-group">
             <label><InlineMath math="P(D)" /> — disease prevalence</label>
-            <input type="number" value={pDisease} min="0.001" max="0.5" step="0.01" onChange={e => { setPDisease(parseFloat(e.target.value) || 0); triggerFlare(); }} />
+            <input type="number" value={pDisease} min="0.001" max="0.5" step="0.01" onChange={e => setPDisease(parseFloat(e.target.value) || 0)} />
           </div>
           <div className="input-group">
             <label>Sensitivity <InlineMath math="P(+|D)" /></label>
-            <input type="number" value={pPosD} min="0" max="1" step="0.01" onChange={e => { setPPosD(parseFloat(e.target.value) || 0); triggerFlare(); }} />
+            <input type="number" value={pPosD} min="0" max="1" step="0.01" onChange={e => setPPosD(parseFloat(e.target.value) || 0)} />
           </div>
           <div className="input-group">
             <label>False positive <InlineMath math="P(+|D^c)" /></label>
-            <input type="number" value={pPosNotD} min="0" max="1" step="0.01" onChange={e => { setPPosNotD(parseFloat(e.target.value) || 0); triggerFlare(); }} />
+            <input type="number" value={pPosNotD} min="0" max="1" step="0.01" onChange={e => setPPosNotD(parseFloat(e.target.value) || 0)} />
           </div>
         </div>
         <table className="demo-table">

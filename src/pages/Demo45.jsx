@@ -4,7 +4,6 @@ import { InlineMath, BlockMath } from 'react-katex';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip } from 'chart.js';
 import { normCDF, normPdf, simpleZForPct } from '../utils/math';
-import { showFlare } from '../utils/flare';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip);
 
@@ -125,7 +124,7 @@ export default function Demo45() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.5: Normal Distribution</h1>
 
       <div className="concept-block">
@@ -184,11 +183,11 @@ export default function Demo45() {
         <div className="input-row">
           <div className="input-group">
             <label><InlineMath math="\mu" /></label>
-            <input type="number" value={muRule} onChange={e => { setMuRule(parseFloat(e.target.value) || 0); showFlare('ZING', ruleCanvasRef.current, { size: 'small', key: 'rule' }); }} />
+            <input type="number" value={muRule} onChange={e => setMuRule(parseFloat(e.target.value) || 0)} />
           </div>
           <div className="input-group">
             <label><InlineMath math="\sigma" /></label>
-            <input type="number" value={sigRule} min="0.1" onChange={e => { setSigRule(parseFloat(e.target.value) || 1); showFlare('ZING', ruleCanvasRef.current, { size: 'small', key: 'rule' }); }} />
+            <input type="number" value={sigRule} min="0.1" onChange={e => setSigRule(parseFloat(e.target.value) || 1)} />
           </div>
         </div>
         <div className="result">

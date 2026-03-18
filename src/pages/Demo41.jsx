@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { InlineMath, BlockMath } from 'react-katex';
-import { showFlare } from '../utils/flare';
 
 export default function Demo41() {
   // Venn diagram
@@ -52,7 +51,7 @@ export default function Demo41() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.1: Probability Concepts and Rules</h1>
 
       <div className="concept-block">

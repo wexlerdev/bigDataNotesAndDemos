@@ -2,7 +2,6 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { InlineMath, BlockMath } from 'react-katex';
 import { normCDF } from '../utils/math';
-import { showFlare } from '../utils/flare';
 
 const zVals = { 0.10: 1.645, 0.05: 1.96, 0.01: 2.576 };
 
@@ -24,13 +23,6 @@ export default function Demo48() {
     const reject = pVal < htAlpha;
     return { z, pVal, zCrit, reject };
   }, [htXbar, htMu0, htSigma, htN, htAlpha]);
-
-  // Flare on reject
-  useEffect(() => {
-    if (ht.reject && decisionRef.current) {
-      showFlare('BAM', decisionRef.current, { size: 'big', key: 'ht' });
-    }
-  }, [ht.reject]);
 
   // Draw rejection chart
   useEffect(() => {
@@ -125,7 +117,7 @@ export default function Demo48() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.8: Hypothesis Testing</h1>
 
       <div className="concept-block">

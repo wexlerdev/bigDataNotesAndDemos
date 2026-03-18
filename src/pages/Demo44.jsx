@@ -4,7 +4,6 @@ import { InlineMath, BlockMath } from 'react-katex';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip } from 'chart.js';
 import { binomPmf, binomCdf, poisPmf, poisCdf } from '../utils/math';
-import { showFlare } from '../utils/flare';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
@@ -22,7 +21,6 @@ export default function Demo44() {
     const sf = 1 - binomCdf(n, bp, bx - 1);
     const data = [];
     for (let k = 0; k <= n; k++) data.push(binomPmf(n, bp, k));
-    if (pmf > 0.5) showFlare('WHAM', null, { size: 'small', key: 'binom' });
     return { mean, varX, pmf, cdf, sf, data, labels: Array.from({ length: n + 1 }, (_, i) => i) };
   }, [bn, bp, bx]);
 
@@ -43,7 +41,7 @@ export default function Demo44() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.4: Binomial and Poisson Distributions</h1>
 
       <div className="concept-block">

@@ -90,8 +90,8 @@ export default function Demo52() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
-      <h1>5.2: The Regression Equation &amp; OLS</h1>
+      <Link to="/demos" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
+      <h1>5.1.2: The Regression Equation &amp; OLS</h1>
 
       <div className="concept-block">
         <h2>What You'll Learn</h2>
@@ -101,7 +101,7 @@ export default function Demo52() {
           <li>The formulas for slope and intercept</li>
         </ul>
         <p><strong>When to use:</strong> You have sample data and want to estimate the best-fitting line.</p>
-        <p><strong>Prerequisites:</strong> <Link to="/5.1">5.1</Link> — regression basics.</p>
+        <p><strong>Prerequisites:</strong> <Link to="/5.1.1">5.1.1</Link> — regression basics.</p>
       </div>
 
       <div className="content-section">

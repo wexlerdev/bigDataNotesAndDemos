@@ -4,12 +4,12 @@ import { InlineMath } from 'react-katex';
 export default function Demo55() {
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
-      <h1>5.5: Key Terms &amp; Critical Distinctions</h1>
+      <Link to="/demos" className="back-link">← Back to Unit 5 — Regression Analysis</Link>
+      <h1>Cheat Sheet: Regression Formulas &amp; Distinctions</h1>
 
       <div className="concept-block">
         <h2>Quick Reference</h2>
-        <p>All Unit 5 terminology and distinctions in one place. Use this as a study sheet.</p>
+        <p>All Unit 5 terminology, formulas, and critical distinctions in one place.</p>
       </div>
 
       <div className="content-section">

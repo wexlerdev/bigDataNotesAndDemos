@@ -40,7 +40,7 @@ export default function Demo43() {
 
   return (
     <main className="demo-page">
-      <Link to="/" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
+      <Link to="/demos" className="back-link">← Back to Unit 4 — Probability &amp; Inference</Link>
       <h1>4.3: Discrete Random Variables</h1>
 
       <div className="concept-block">
